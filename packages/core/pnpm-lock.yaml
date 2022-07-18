@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@gouvfr/dsfr': ^1.6.0
   '@stencil/core': ^2.13.0
   '@stencil/eslint-plugin': ^0.4.0
   '@types/jest': ^27.0.3
@@ -15,6 +16,7 @@ specifiers:
   typescript: ^4.0.8
 
 dependencies:
+  '@gouvfr/dsfr': 1.6.0
   '@stencil/core': 2.17.1
 
 devDependencies:
@@ -377,6 +379,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@gouvfr/dsfr/1.6.0:
+    resolution: {integrity: sha512-1d/Uh9xqMWYGYG+/Zb5eg2lROB8MFq0Dy2G000/L8qAWi/LjQaX27U3TfCGwQ5l34Pna6x2/HV74foeIfsoaGA==}
+    engines: {node: '>=14.18.0'}
+    dev: false
 
   /@humanwhocodes/config-array/0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
