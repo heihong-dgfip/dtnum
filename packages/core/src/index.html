@@ -9,6 +9,12 @@
     <script nomodule src="/build/core.js"></script>
   </head>
   <body>
-    <fr-accordion></fr-accordion>
+    <fr-accordion><span slot="title" id="titre1">titre1</span> <span id="descripton1">descripton</span></fr-accordion>
+    <button onclick="myFunction()">Click me</button>
   </body>
+  <script>
+    function myFunction() {
+      document.getElementById('descripton1').innerHTML = 'Hello World';
+    }
+  </script>
 </html>
