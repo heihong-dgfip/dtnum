@@ -17,6 +17,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.23.2",
     "@ionic/prettier-config": "^2.0.0",
+    "@stencil/vue-output-target": "^0.6.1",
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3"
