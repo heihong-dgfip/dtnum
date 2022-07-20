@@ -1,4 +1,4 @@
-import { Component, h, Element } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'fr-accordion',
@@ -6,8 +6,6 @@ import { Component, h, Element } from '@stencil/core';
   shadow: false,
 })
 export class Accordion {
-  @Element() el!: HTMLElement;
-
   render() {
     return (
       <section class="fr-accordion">
