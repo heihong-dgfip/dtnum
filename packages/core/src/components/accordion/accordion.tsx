@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'fr-accordion',
-  styleUrl: 'accordion.css',
+  styleUrl: 'accordion.scss',
   shadow: false,
 })
 export class Accordion {
