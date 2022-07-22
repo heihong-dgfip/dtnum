@@ -5,6 +5,7 @@ export const config: Config = {
   namespace: 'core',
   outputTargets: [
     vue({
+      componentCorePackage: '@heihong-dgfip/core',
       proxiesFile: '../vue/src/components.ts',
       includeDefineCustomElements: false,
       includeImportCustomElements: true,
