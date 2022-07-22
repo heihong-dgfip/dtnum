@@ -6,6 +6,30 @@ import { Component, h } from '@stencil/core';
   shadow: false,
 })
 export class Accordion {
+  // @Element() el!: HTMLElement;
+
+  /*connectedCallback() {
+
+    const target = this.el;
+
+    const config = {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: ['class'],
+      childList: true,
+      subtree: true,
+    };
+
+      function subscriberCallback(mutations) {
+        mutations.forEach((mutation) => {
+            console.log(mutation);
+        });
+    }
+
+    const observer = new MutationObserver(subscriberCallback);
+    observer.observe(target, config);
+  }*/
+
   render() {
     return (
       <section class="fr-accordion">
