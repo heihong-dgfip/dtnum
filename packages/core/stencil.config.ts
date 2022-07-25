@@ -1,9 +1,16 @@
 import { Config } from '@stencil/core';
+import { vueOutputTarget as vue } from '@stencil/vue-output-target';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'core',
   outputTargets: [
+    vue({
+      componentCorePackage: '@dtnum/core',
+      proxiesFile: '../vue/src/components.ts',
+      includeDefineCustomElements: false,
+      includeImportCustomElements: true,
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
