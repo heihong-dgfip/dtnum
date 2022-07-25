@@ -1,8 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@gouvfr/dsfr': ^1.6.0
   '@stencil/core': ^2.13.0
   '@stencil/eslint-plugin': ^0.4.0
+  '@stencil/sass': ^1.5.2
   '@types/jest': ^27.0.3
   '@typescript-eslint/eslint-plugin': ^4.0.0
   '@typescript-eslint/parser': ^4.0.0
@@ -15,10 +17,12 @@ specifiers:
   typescript: ^4.0.8
 
 dependencies:
+  '@gouvfr/dsfr': 1.6.0
   '@stencil/core': 2.17.1
 
 devDependencies:
   '@stencil/eslint-plugin': 0.4.0_6kiettsgnups22qywh6qvr6hy4
+  '@stencil/sass': 1.5.2_@stencil+core@2.17.1
   '@types/jest': 27.5.2
   '@typescript-eslint/eslint-plugin': 4.33.0_3ekaj7j3owlolnuhj3ykrb7u7i
   '@typescript-eslint/parser': 4.33.0_hxadhbs2xogijvk7vq4t2azzbu
@@ -378,6 +382,11 @@ packages:
       - supports-color
     dev: true
 
+  /@gouvfr/dsfr/1.6.0:
+    resolution: {integrity: sha512-1d/Uh9xqMWYGYG+/Zb5eg2lROB8MFq0Dy2G000/L8qAWi/LjQaX27U3TfCGwQ5l34Pna6x2/HV74foeIfsoaGA==}
+    engines: {node: '>=14.18.0'}
+    dev: false
+
   /@humanwhocodes/config-array/0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
     engines: {node: '>=10.10.0'}
@@ -675,7 +684,6 @@ packages:
     resolution: {integrity: sha512-ErjQsNALgZQ9SYeBHhqwL1UO+Zbptwl3kwrRJC2tGlc3G/T6UvPuaKr+PGsqI+CZGia+0+R5EELQvFu74mYeIg==}
     engines: {node: '>=12.10.0', npm: '>=6.0.0'}
     hasBin: true
-    dev: false
 
   /@stencil/eslint-plugin/0.4.0_6kiettsgnups22qywh6qvr6hy4:
     resolution: {integrity: sha512-2tjDOjyh0DLt1NITII4s+rU1UwcomrbR/yei3fIU83l7PLNdZvBCSCopsXYyxaY/C37aYJQ0LR8edlLVEk6EUw==}
@@ -694,6 +702,14 @@ packages:
       eslint-utils: 3.0.0_eslint@7.32.0
       tsutils: 3.0.0_typescript@4.7.4
       typescript: 4.7.4
+    dev: true
+
+  /@stencil/sass/1.5.2_@stencil+core@2.17.1:
+    resolution: {integrity: sha512-nJ93pUSylsGsMX0eLmhxh1oEljcUjj5mYjhB9ziCdoaydAdjukrUoqDCC7tdVbOcBo2hKptQyWqCtETnBGYsXQ==}
+    peerDependencies:
+      '@stencil/core': '>=1.0.2'
+    dependencies:
+      '@stencil/core': 2.17.1
     dev: true
 
   /@tootallnate/once/1.1.2:
