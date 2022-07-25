@@ -1,5 +1,5 @@
 {
-  "name": "dtnum/vue",
+  "name": "@dtnum/vue",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -26,6 +26,6 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
-    "@ionic-enterprise/cs-demo-weather-widgets": "^3.0.0"
+    "@dtnum/core": "workspace:^0.0.1"
   }
 }

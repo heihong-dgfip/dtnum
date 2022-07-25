@@ -6,7 +6,7 @@ export const config: Config = {
   namespace: 'core',
   outputTargets: [
     vue({
-      componentCorePackage: 'dtnum/core',
+      componentCorePackage: '@dtnum/core',
       proxiesFile: '../vue/src/components.ts',
       includeDefineCustomElements: false,
       includeImportCustomElements: true,
