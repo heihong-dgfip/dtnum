@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { vueOutputTarget as vue } from '@stencil/vue-output-target';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'core',
@@ -33,6 +34,10 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-  globalStyle: 'src/global/global.scss',
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/global/global.scss'],
+    }),
+  ],
   globalScript: 'src/global/global.ts',
 };
