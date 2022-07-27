@@ -8,5 +8,7 @@ import type { JSX } from '@dtnum/core/components';
 import { defineCustomElement as defineFrAccordion } from '@dtnum/core/components/fr-accordion.js';
 
 
-export const FrAccordion = /*@__PURE__*/ defineContainer<JSX.FrAccordion>('fr-accordion', defineFrAccordion);
+export const FrAccordion = /*@__PURE__*/ defineContainer<JSX.FrAccordion>('fr-accordion', defineFrAccordion, [
+  'open'
+]);
 
