@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface FrAccordion {
     }
+    interface FrHeader {
+    }
 }
 declare global {
     interface HTMLFrAccordionElement extends Components.FrAccordion, HTMLStencilElement {
@@ -16,15 +18,25 @@ declare global {
         prototype: HTMLFrAccordionElement;
         new (): HTMLFrAccordionElement;
     };
+    interface HTMLFrHeaderElement extends Components.FrHeader, HTMLStencilElement {
+    }
+    var HTMLFrHeaderElement: {
+        prototype: HTMLFrHeaderElement;
+        new (): HTMLFrHeaderElement;
+    };
     interface HTMLElementTagNameMap {
         "fr-accordion": HTMLFrAccordionElement;
+        "fr-header": HTMLFrHeaderElement;
     }
 }
 declare namespace LocalJSX {
     interface FrAccordion {
     }
+    interface FrHeader {
+    }
     interface IntrinsicElements {
         "fr-accordion": FrAccordion;
+        "fr-header": FrHeader;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +44,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "fr-accordion": LocalJSX.FrAccordion & JSXBase.HTMLAttributes<HTMLFrAccordionElement>;
+            "fr-header": LocalJSX.FrHeader & JSXBase.HTMLAttributes<HTMLFrHeaderElement>;
         }
     }
 }
