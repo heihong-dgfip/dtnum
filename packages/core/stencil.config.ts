@@ -17,9 +17,7 @@ export const config: Config = {
       copy: [
         { src: 'components/**/*.html' },
         { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'icons' },
-        { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'components/icons' },
         { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'fonts' },
-        { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'components/fonts' },
       ],
     },
     {
@@ -34,9 +32,7 @@ export const config: Config = {
       copy: [
         { src: 'components/**/*.html' },
         { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'icons' },
-        { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'components/icons' },
         { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'fonts' },
-        { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'components/fonts' },
       ],
       serviceWorker: null, // disable service workers
     },
