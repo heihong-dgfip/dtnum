@@ -14,6 +14,13 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        { src: 'components/**/*.html' },
+        { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'icons' },
+        { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'components/icons' },
+        { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'fonts' },
+        { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'components/fonts' },
+      ],
     },
     {
       type: 'dist-custom-elements',
