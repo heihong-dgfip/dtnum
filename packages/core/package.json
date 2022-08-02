@@ -1,6 +1,6 @@
 {
   "name": "@dtnum/core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -9,8 +9,6 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "fonts": "dist/collection/fonts",
-  "icons": "dist/collection/icons",
   "unpkg": "dist/core/core.esm.js",
   "repository": {
     "type": "git",
