@@ -9,6 +9,8 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
+  "fronts": "dist/collection/fronts",
+  "icons": "dist/collection/icons",
   "unpkg": "dist/core/core.esm.js",
   "repository": {
     "type": "git",
