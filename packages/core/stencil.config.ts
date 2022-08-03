@@ -16,7 +16,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [
         { src: 'components/**/*.html' },
-        { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'icons' },
+        { src: './../node_modules/@gouvfr/dsfr/dist/utility', dest: 'utility' },
         { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'fonts' },
       ],
     },
@@ -31,7 +31,7 @@ export const config: Config = {
       type: 'www',
       copy: [
         { src: 'components/**/*.html' },
-        { src: './../node_modules/@gouvfr/dsfr/dist/icons', dest: 'icons' },
+        { src: './../node_modules/@gouvfr/dsfr/dist/utility', dest: 'utility' },
         { src: './../node_modules/@gouvfr/dsfr/dist/fonts', dest: 'fonts' },
       ],
       serviceWorker: null, // disable service workers
