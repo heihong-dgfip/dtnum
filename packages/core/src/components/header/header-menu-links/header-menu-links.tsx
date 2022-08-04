@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'header-menu-links.scss',
   shadow: false,
 })
-export class Link {
+export class MenuLink {
   @Prop({ reflect: true }) titleLink = '';
   @Prop({ reflect: true }) ariaCurrentLink = '';
   @Prop({ reflect: true }) hrefLink = '';

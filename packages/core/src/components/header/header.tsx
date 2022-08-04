@@ -57,72 +57,7 @@ export class Header {
             <button aria-controls="modal-header__menu" class="fr-btn fr-btn--close" data-fr-js-modal-button="true">
               Fermer
             </button>
-            <slot name="menu"></slot>
-            <nav
-              id="navigation-866"
-              role="navigation"
-              aria-label="Menu principal"
-              class="fr-nav"
-              data-fr-js-navigation="true"
-            >
-              <ul class="fr-nav__list">
-                <li class="fr-nav__item" data-fr-js-navigation-item="true">
-                  <a
-                    href="/comment-utiliser-le-dsfr"
-                    target="_self"
-                    aria-controls="modal-header__menu"
-                    class="fr-nav__link"
-                    data-fr-js-modal-button="true"
-                  >
-                    Comment utiliser le DSFR
-                  </a>
-                </li>
-                <li class="fr-nav__item" data-fr-js-navigation-item="true">
-                  <a
-                    href="/elements-d-interface"
-                    target="_self"
-                    aria-controls="modal-header__menu"
-                    class="fr-nav__link"
-                    data-fr-js-modal-button="true"
-                  >
-                    Éléments d'interface
-                  </a>
-                </li>
-                <li class="fr-nav__item" data-fr-js-navigation-item="true">
-                  <a
-                    href="/communaute"
-                    target="_self"
-                    aria-controls="modal-header__menu"
-                    class="fr-nav__link"
-                    data-fr-js-modal-button="true"
-                  >
-                    Communauté
-                  </a>
-                </li>
-                <li class="fr-nav__item" data-fr-js-navigation-item="true">
-                  <a
-                    href="/centre-de-support"
-                    target="_self"
-                    aria-controls="modal-header__menu"
-                    class="fr-nav__link"
-                    data-fr-js-modal-button="true"
-                  >
-                    Centre de support
-                  </a>
-                </li>
-                <li class="fr-nav__item" data-fr-js-navigation-item="true">
-                  <a
-                    href="/a-propos"
-                    target="_self"
-                    aria-controls="modal-header__menu"
-                    class="fr-nav__link"
-                    data-fr-js-modal-button="true"
-                  >
-                    À propos
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <slot></slot>
           </div>
         </div>
       </header>

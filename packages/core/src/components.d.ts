@@ -39,6 +39,14 @@ export namespace Components {
         "textLink": string;
         "titleLink": string;
     }
+    interface FrNavItem {
+        "ariaCurrentLink": string;
+        "hrefLink": string;
+        "textLink": string;
+        "titleLink": string;
+    }
+    interface FrNavigation {
+    }
 }
 declare global {
     interface HTMLFrAccordionElement extends Components.FrAccordion, HTMLStencilElement {
@@ -89,6 +97,18 @@ declare global {
         prototype: HTMLFrLinkElement;
         new (): HTMLFrLinkElement;
     };
+    interface HTMLFrNavItemElement extends Components.FrNavItem, HTMLStencilElement {
+    }
+    var HTMLFrNavItemElement: {
+        prototype: HTMLFrNavItemElement;
+        new (): HTMLFrNavItemElement;
+    };
+    interface HTMLFrNavigationElement extends Components.FrNavigation, HTMLStencilElement {
+    }
+    var HTMLFrNavigationElement: {
+        prototype: HTMLFrNavigationElement;
+        new (): HTMLFrNavigationElement;
+    };
     interface HTMLElementTagNameMap {
         "fr-accordion": HTMLFrAccordionElement;
         "fr-footer": HTMLFrFooterElement;
@@ -98,6 +118,8 @@ declare global {
         "fr-header-tools": HTMLFrHeaderToolsElement;
         "fr-header-tools-link": HTMLFrHeaderToolsLinkElement;
         "fr-link": HTMLFrLinkElement;
+        "fr-nav-item": HTMLFrNavItemElement;
+        "fr-navigation": HTMLFrNavigationElement;
     }
 }
 declare namespace LocalJSX {
@@ -134,6 +156,14 @@ declare namespace LocalJSX {
         "textLink"?: string;
         "titleLink"?: string;
     }
+    interface FrNavItem {
+        "ariaCurrentLink"?: string;
+        "hrefLink"?: string;
+        "textLink"?: string;
+        "titleLink"?: string;
+    }
+    interface FrNavigation {
+    }
     interface IntrinsicElements {
         "fr-accordion": FrAccordion;
         "fr-footer": FrFooter;
@@ -143,6 +173,8 @@ declare namespace LocalJSX {
         "fr-header-tools": FrHeaderTools;
         "fr-header-tools-link": FrHeaderToolsLink;
         "fr-link": FrLink;
+        "fr-nav-item": FrNavItem;
+        "fr-navigation": FrNavigation;
     }
 }
 export { LocalJSX as JSX };
@@ -157,6 +189,8 @@ declare module "@stencil/core" {
             "fr-header-tools": LocalJSX.FrHeaderTools & JSXBase.HTMLAttributes<HTMLFrHeaderToolsElement>;
             "fr-header-tools-link": LocalJSX.FrHeaderToolsLink & JSXBase.HTMLAttributes<HTMLFrHeaderToolsLinkElement>;
             "fr-link": LocalJSX.FrLink & JSXBase.HTMLAttributes<HTMLFrLinkElement>;
+            "fr-nav-item": LocalJSX.FrNavItem & JSXBase.HTMLAttributes<HTMLFrNavItemElement>;
+            "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
         }
     }
 }
