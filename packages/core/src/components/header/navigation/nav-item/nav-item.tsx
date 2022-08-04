@@ -19,8 +19,6 @@ export class NavItem {
         aria-current={this.ariaCurrentLink}
         aria-controls="modal-header__menu"
         title={this.titleLink}
-        class="fr-nav__link"
-        data-fr-js-modal-button="true"
       >
         {this.textLink}
       </a>
