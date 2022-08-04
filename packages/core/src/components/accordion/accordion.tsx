@@ -1,21 +1,11 @@
 import { Component, h } from '@stencil/core';
 
-declare global {
-  interface Window {
-    dsfr: any;
-  }
-}
-
 @Component({
   tag: 'fr-accordion',
   styleUrl: 'accordion.scss',
   shadow: false,
 })
 export class Accordion {
-  connectedCallback() {
-    console.log(window.dsfr);
-  }
-
   render() {
     return (
       <section class="fr-accordion">

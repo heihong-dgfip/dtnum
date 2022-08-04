@@ -8,66 +8,121 @@ import { Component, h } from '@stencil/core';
 export class Header {
   render() {
     return (
-      <header role="banner" class="fr-header">
+      <header role="banner" id="header-navigation" class="fr-header">
         <div class="fr-header__body">
           <div class="fr-container">
             <div class="fr-header__body-row">
               <div class="fr-header__brand fr-enlarge-link">
                 <div class="fr-header__brand-top">
                   <div class="fr-header__logo">
-                    <a href="/" title="Accueil - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                      <p class="fr-logo">
-                        Intitulé
-                        <br></br>officiel
-                      </p>
-                    </a>
+                    <p class="fr-logo">
+                      République
+                      <br />
+                      Française
+                    </p>
                   </div>
                   <div class="fr-header__navbar">
                     <button
-                      class="fr-btn--menu fr-btn"
                       data-fr-opened="false"
-                      aria-controls="modal-585"
+                      aria-controls="modal-header__menu"
                       aria-haspopup="menu"
-                      id="button-586"
+                      id="button-861"
                       title="Menu"
+                      class="fr-btn--menu fr-btn"
+                      data-fr-js-modal-button="true"
                     >
                       Menu
                     </button>
                   </div>
                 </div>
+                <div class="fr-header__service">
+                  <slot name="service"></slot>
+                </div>
               </div>
               <div class="fr-header__tools">
-                <div class="fr-header__tools-links">
-                  <ul class="fr-btns-group">
-                    <li>
-                      <a class="fr-btn fr-icon-add-circle-line" href="[url - à modifier]">
-                        Créer un espace
-                      </a>
-                    </li>
-                    <li>
-                      <a class="fr-btn fr-icon-lock-line" href="[url - à modifier]">
-                        Se connecter
-                      </a>
-                    </li>
-                    <li>
-                      <a class="fr-btn fr-icon-account-line" href="[url - à modifier]">
-                        S’enregistrer
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <slot name="tools"></slot>
               </div>
             </div>
           </div>
         </div>
-        <div class="fr-header__menu fr-modal" id="modal-585" aria-labelledby="button-586">
+        <div
+          id="modal-header__menu"
+          aria-labelledby="button-861"
+          class="fr-header__menu fr-modal"
+          data-fr-js-modal="true"
+          data-fr-js-header-modal="true"
+          role="dialog"
+        >
           <div class="fr-container">
-            <button class="fr-btn--close fr-btn" aria-controls="modal-585" title="Fermer">
+            <button aria-controls="modal-header__menu" class="fr-btn fr-btn--close" data-fr-js-modal-button="true">
               Fermer
             </button>
-            <div class="fr-header__menu-links">
-              <ul class="fr-btns-group"></ul>
-            </div>
+            <slot name="menu"></slot>
+            <nav
+              id="navigation-866"
+              role="navigation"
+              aria-label="Menu principal"
+              class="fr-nav"
+              data-fr-js-navigation="true"
+            >
+              <ul class="fr-nav__list">
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a
+                    href="/comment-utiliser-le-dsfr"
+                    target="_self"
+                    aria-controls="modal-header__menu"
+                    class="fr-nav__link"
+                    data-fr-js-modal-button="true"
+                  >
+                    Comment utiliser le DSFR
+                  </a>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a
+                    href="/elements-d-interface"
+                    target="_self"
+                    aria-controls="modal-header__menu"
+                    class="fr-nav__link"
+                    data-fr-js-modal-button="true"
+                  >
+                    Éléments d'interface
+                  </a>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a
+                    href="/communaute"
+                    target="_self"
+                    aria-controls="modal-header__menu"
+                    class="fr-nav__link"
+                    data-fr-js-modal-button="true"
+                  >
+                    Communauté
+                  </a>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a
+                    href="/centre-de-support"
+                    target="_self"
+                    aria-controls="modal-header__menu"
+                    class="fr-nav__link"
+                    data-fr-js-modal-button="true"
+                  >
+                    Centre de support
+                  </a>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a
+                    href="/a-propos"
+                    target="_self"
+                    aria-controls="modal-header__menu"
+                    class="fr-nav__link"
+                    data-fr-js-modal-button="true"
+                  >
+                    À propos
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </header>
