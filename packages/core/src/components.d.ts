@@ -6,7 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FrAbout {
+    }
     interface FrAccordion {
+    }
+    interface FrContact {
     }
     interface FrFooter {
     }
@@ -33,11 +37,7 @@ export namespace Components {
         "textLink": string;
         "titleLink": string;
     }
-    interface FrLink {
-        "ariaCurrentLink": string;
-        "hrefLink": string;
-        "textLink": string;
-        "titleLink": string;
+    interface FrHome {
     }
     interface FrNavItem {
         "ariaCurrentLink": string;
@@ -49,11 +49,23 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFrAboutElement extends Components.FrAbout, HTMLStencilElement {
+    }
+    var HTMLFrAboutElement: {
+        prototype: HTMLFrAboutElement;
+        new (): HTMLFrAboutElement;
+    };
     interface HTMLFrAccordionElement extends Components.FrAccordion, HTMLStencilElement {
     }
     var HTMLFrAccordionElement: {
         prototype: HTMLFrAccordionElement;
         new (): HTMLFrAccordionElement;
+    };
+    interface HTMLFrContactElement extends Components.FrContact, HTMLStencilElement {
+    }
+    var HTMLFrContactElement: {
+        prototype: HTMLFrContactElement;
+        new (): HTMLFrContactElement;
     };
     interface HTMLFrFooterElement extends Components.FrFooter, HTMLStencilElement {
     }
@@ -91,11 +103,11 @@ declare global {
         prototype: HTMLFrHeaderToolsLinkElement;
         new (): HTMLFrHeaderToolsLinkElement;
     };
-    interface HTMLFrLinkElement extends Components.FrLink, HTMLStencilElement {
+    interface HTMLFrHomeElement extends Components.FrHome, HTMLStencilElement {
     }
-    var HTMLFrLinkElement: {
-        prototype: HTMLFrLinkElement;
-        new (): HTMLFrLinkElement;
+    var HTMLFrHomeElement: {
+        prototype: HTMLFrHomeElement;
+        new (): HTMLFrHomeElement;
     };
     interface HTMLFrNavItemElement extends Components.FrNavItem, HTMLStencilElement {
     }
@@ -110,20 +122,26 @@ declare global {
         new (): HTMLFrNavigationElement;
     };
     interface HTMLElementTagNameMap {
+        "fr-about": HTMLFrAboutElement;
         "fr-accordion": HTMLFrAccordionElement;
+        "fr-contact": HTMLFrContactElement;
         "fr-footer": HTMLFrFooterElement;
         "fr-header": HTMLFrHeaderElement;
         "fr-header-menu-links": HTMLFrHeaderMenuLinksElement;
         "fr-header-service": HTMLFrHeaderServiceElement;
         "fr-header-tools": HTMLFrHeaderToolsElement;
         "fr-header-tools-link": HTMLFrHeaderToolsLinkElement;
-        "fr-link": HTMLFrLinkElement;
+        "fr-home": HTMLFrHomeElement;
         "fr-nav-item": HTMLFrNavItemElement;
         "fr-navigation": HTMLFrNavigationElement;
     }
 }
 declare namespace LocalJSX {
+    interface FrAbout {
+    }
     interface FrAccordion {
+    }
+    interface FrContact {
     }
     interface FrFooter {
     }
@@ -150,11 +168,7 @@ declare namespace LocalJSX {
         "textLink"?: string;
         "titleLink"?: string;
     }
-    interface FrLink {
-        "ariaCurrentLink"?: string;
-        "hrefLink"?: string;
-        "textLink"?: string;
-        "titleLink"?: string;
+    interface FrHome {
     }
     interface FrNavItem {
         "ariaCurrentLink"?: string;
@@ -165,14 +179,16 @@ declare namespace LocalJSX {
     interface FrNavigation {
     }
     interface IntrinsicElements {
+        "fr-about": FrAbout;
         "fr-accordion": FrAccordion;
+        "fr-contact": FrContact;
         "fr-footer": FrFooter;
         "fr-header": FrHeader;
         "fr-header-menu-links": FrHeaderMenuLinks;
         "fr-header-service": FrHeaderService;
         "fr-header-tools": FrHeaderTools;
         "fr-header-tools-link": FrHeaderToolsLink;
-        "fr-link": FrLink;
+        "fr-home": FrHome;
         "fr-nav-item": FrNavItem;
         "fr-navigation": FrNavigation;
     }
@@ -181,14 +197,16 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fr-about": LocalJSX.FrAbout & JSXBase.HTMLAttributes<HTMLFrAboutElement>;
             "fr-accordion": LocalJSX.FrAccordion & JSXBase.HTMLAttributes<HTMLFrAccordionElement>;
+            "fr-contact": LocalJSX.FrContact & JSXBase.HTMLAttributes<HTMLFrContactElement>;
             "fr-footer": LocalJSX.FrFooter & JSXBase.HTMLAttributes<HTMLFrFooterElement>;
             "fr-header": LocalJSX.FrHeader & JSXBase.HTMLAttributes<HTMLFrHeaderElement>;
             "fr-header-menu-links": LocalJSX.FrHeaderMenuLinks & JSXBase.HTMLAttributes<HTMLFrHeaderMenuLinksElement>;
             "fr-header-service": LocalJSX.FrHeaderService & JSXBase.HTMLAttributes<HTMLFrHeaderServiceElement>;
             "fr-header-tools": LocalJSX.FrHeaderTools & JSXBase.HTMLAttributes<HTMLFrHeaderToolsElement>;
             "fr-header-tools-link": LocalJSX.FrHeaderToolsLink & JSXBase.HTMLAttributes<HTMLFrHeaderToolsLinkElement>;
-            "fr-link": LocalJSX.FrLink & JSXBase.HTMLAttributes<HTMLFrLinkElement>;
+            "fr-home": LocalJSX.FrHome & JSXBase.HTMLAttributes<HTMLFrHomeElement>;
             "fr-nav-item": LocalJSX.FrNavItem & JSXBase.HTMLAttributes<HTMLFrNavItemElement>;
             "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
         }
