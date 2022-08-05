@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Element } from '@stencil/core';
 
 @Component({
   tag: 'fr-navigation',
@@ -6,6 +6,20 @@ import { Component, h } from '@stencil/core';
   shadow: false,
 })
 export class Navigation {
+  @Element() el!: HTMLElement;
+  slotchange() {
+    console.log('test');
+    let li = document.createElement('li');
+    li.className = 'fr-nav__item';
+    this.el.shadowRoot
+      .querySelector('slot')
+      ?.assignedElements({ flatten: true })
+      .forEach((item) => {
+        item.setAttribute('class', 'fr-nav__link');
+        item.prepend(li);
+      });
+  }
+
   render() {
     return (
       <nav
@@ -15,7 +29,9 @@ export class Navigation {
         class="fr-nav"
         data-fr-js-navigation="true"
       >
-        <slot></slot>
+        <ul class="fr-nav__list">
+          <slot onSlotchange={() => this.slotchange()}></slot>
+        </ul>
       </nav>
     );
   }
