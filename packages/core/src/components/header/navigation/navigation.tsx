@@ -7,17 +7,20 @@ import { Component, h, Element } from '@stencil/core';
 })
 export class Navigation {
   @Element() el!: HTMLElement;
+
+  componentDidLoad() {
+    this.slotchange();
+  }
+
   slotchange() {
-    console.log('test');
-    let li = document.createElement('li');
-    li.className = 'fr-nav__item';
-    this.el.shadowRoot
-      .querySelector('slot')
-      ?.assignedElements({ flatten: true })
-      .forEach((item) => {
-        item.setAttribute('class', 'fr-nav__link');
-        item.prepend(li);
-      });
+    Array.from(this.el.querySelector('ul').children).forEach((item) => {
+      item.setAttribute('class', 'fr-nav__link');
+      let parent = item.parentNode;
+      let wrapper = document.createElement('li');
+      wrapper.className = 'fr-nav__item';
+      parent.replaceChild(wrapper, item);
+      wrapper.appendChild(item);
+    });
   }
 
   render() {

@@ -39,12 +39,6 @@ export namespace Components {
     }
     interface FrHome {
     }
-    interface FrNavItem {
-        "ariaCurrentLink": string;
-        "hrefLink": string;
-        "textLink": string;
-        "titleLink": string;
-    }
     interface FrNavigation {
     }
 }
@@ -109,12 +103,6 @@ declare global {
         prototype: HTMLFrHomeElement;
         new (): HTMLFrHomeElement;
     };
-    interface HTMLFrNavItemElement extends Components.FrNavItem, HTMLStencilElement {
-    }
-    var HTMLFrNavItemElement: {
-        prototype: HTMLFrNavItemElement;
-        new (): HTMLFrNavItemElement;
-    };
     interface HTMLFrNavigationElement extends Components.FrNavigation, HTMLStencilElement {
     }
     var HTMLFrNavigationElement: {
@@ -132,7 +120,6 @@ declare global {
         "fr-header-tools": HTMLFrHeaderToolsElement;
         "fr-header-tools-link": HTMLFrHeaderToolsLinkElement;
         "fr-home": HTMLFrHomeElement;
-        "fr-nav-item": HTMLFrNavItemElement;
         "fr-navigation": HTMLFrNavigationElement;
     }
 }
@@ -170,12 +157,6 @@ declare namespace LocalJSX {
     }
     interface FrHome {
     }
-    interface FrNavItem {
-        "ariaCurrentLink"?: string;
-        "hrefLink"?: string;
-        "textLink"?: string;
-        "titleLink"?: string;
-    }
     interface FrNavigation {
     }
     interface IntrinsicElements {
@@ -189,7 +170,6 @@ declare namespace LocalJSX {
         "fr-header-tools": FrHeaderTools;
         "fr-header-tools-link": FrHeaderToolsLink;
         "fr-home": FrHome;
-        "fr-nav-item": FrNavItem;
         "fr-navigation": FrNavigation;
     }
 }
@@ -207,7 +187,6 @@ declare module "@stencil/core" {
             "fr-header-tools": LocalJSX.FrHeaderTools & JSXBase.HTMLAttributes<HTMLFrHeaderToolsElement>;
             "fr-header-tools-link": LocalJSX.FrHeaderToolsLink & JSXBase.HTMLAttributes<HTMLFrHeaderToolsLinkElement>;
             "fr-home": LocalJSX.FrHome & JSXBase.HTMLAttributes<HTMLFrHomeElement>;
-            "fr-nav-item": LocalJSX.FrNavItem & JSXBase.HTMLAttributes<HTMLFrNavItemElement>;
             "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
         }
     }

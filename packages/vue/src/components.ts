@@ -15,7 +15,6 @@ import { defineCustomElement as defineFrHeaderService } from '@dtnum/core/compon
 import { defineCustomElement as defineFrHeaderTools } from '@dtnum/core/components/fr-header-tools.js';
 import { defineCustomElement as defineFrHeaderToolsLink } from '@dtnum/core/components/fr-header-tools-link.js';
 import { defineCustomElement as defineFrHome } from '@dtnum/core/components/fr-home.js';
-import { defineCustomElement as defineFrNavItem } from '@dtnum/core/components/fr-nav-item.js';
 import { defineCustomElement as defineFrNavigation } from '@dtnum/core/components/fr-navigation.js';
 
 
@@ -63,14 +62,6 @@ export const FrHeaderToolsLink = /*@__PURE__*/ defineContainer<JSX.FrHeaderTools
 
 
 export const FrHome = /*@__PURE__*/ defineContainer<JSX.FrHome>('fr-home', defineFrHome);
-
-
-export const FrNavItem = /*@__PURE__*/ defineContainer<JSX.FrNavItem>('fr-nav-item', defineFrNavItem, [
-  'titleLink',
-  'ariaCurrentLink',
-  'hrefLink',
-  'textLink'
-]);
 
 
 export const FrNavigation = /*@__PURE__*/ defineContainer<JSX.FrNavigation>('fr-navigation', defineFrNavigation);
