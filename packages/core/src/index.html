@@ -40,7 +40,8 @@
       link.href = '#';
       link.target = '_self';
       link.innerHTML = 'acces direct';
-      document.getElementById('navigation').append(link);
+      document.querySelector('ul.fr-nav__list').append(link);
+      document.querySelector('fr-navigation').addElement(link);
     }
   </script>
 </html>

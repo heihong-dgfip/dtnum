@@ -1,4 +1,4 @@
-import { Component, h, Element, ComponentInterface } from '@stencil/core';
+import { Component, h, Element, ComponentInterface, Method } from '@stencil/core';
 
 @Component({
   tag: 'fr-navigation',
@@ -8,10 +8,6 @@ import { Component, h, Element, ComponentInterface } from '@stencil/core';
 export class Navigation implements ComponentInterface {
   @Element() el!: HTMLElement;
 
-  connectedCallback() {
-    let f = 'connectedCallback';
-    this.slotchange(f);
-  }
   componentDidLoad() {
     let f = 'componentDidLoad';
 
@@ -32,14 +28,29 @@ export class Navigation implements ComponentInterface {
           Array.from(this.el.querySelector('ul.fr-nav__list')?.children).forEach((item) => {
             item?.setAttribute('class', 'fr-nav__link');
             let parent = item.parentNode;
-            let wrapper = document.createElement('li');
-            wrapper.className = 'fr-nav__item';
-            parent.replaceChild(wrapper, item);
-            wrapper.appendChild(item);
+
+            let parentul = this.el.querySelector('ul.fr-nav__list');
+            console.log(item);
+            if (item.parentNode == parentul) {
+              let wrapper = document.createElement('li');
+              wrapper.className = 'fr-nav__item';
+              parent.replaceChild(wrapper, item);
+              wrapper.appendChild(item);
+            }
           });
         }
       }
     }
+  }
+
+  @Method()
+  async addElement(element) {
+    let wrapper = document.createElement('li');
+    wrapper.className = 'fr-nav__item';
+    wrapper.appendChild(element);
+    element.setAttribute('class', 'fr-nav__link');
+
+    this.el.querySelector('ul.fr-nav__list').appendChild(wrapper);
   }
 
   render() {
@@ -52,7 +63,7 @@ export class Navigation implements ComponentInterface {
         data-fr-js-navigation="true"
       >
         <ul class="fr-nav__list">
-          <slot onSlotchange={(f) => this.slotchange(f)}></slot>
+          <slot></slot>
         </ul>
       </nav>
     );

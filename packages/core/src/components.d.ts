@@ -40,6 +40,7 @@ export namespace Components {
     interface FrHome {
     }
     interface FrNavigation {
+        "addElement": (element: any) => Promise<void>;
     }
 }
 declare global {
