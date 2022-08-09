@@ -18,7 +18,7 @@
         text-link="Système de Design de l'État"
       >
       </fr-header-service>
-      <fr-navigation>
+      <fr-navigation id="navigation">
         <a href="#" target="_self" aria-current="page">accès direct</a>
         <a href="#" target="_self">accès direct</a>
         <a href="#" target="_self">accès direct</a>
@@ -36,9 +36,11 @@
   </body>
   <script>
     function myFunction() {
-      let span = document.createElement('span');
-      span.append('Some text');
-      document.getElementById('descripton1').append(span);
+      let link = document.createElement('a');
+      link.href = '#';
+      link.target = '_self';
+      link.innerHTML = 'acces direct';
+      document.getElementById('navigation').append(link);
     }
   </script>
 </html>
