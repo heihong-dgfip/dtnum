@@ -15,7 +15,6 @@ export class Navigation implements ComponentInterface {
   }
 
   slotchange(f) {
-    console.log('slotchange');
     if (this.el.querySelector('ul.fr-nav__list')) {
       if (this.el.querySelector('ul.fr-nav__list')?.children.length !== 0) {
         if (
@@ -30,7 +29,6 @@ export class Navigation implements ComponentInterface {
             let parent = item.parentNode;
 
             let parentul = this.el.querySelector('ul.fr-nav__list');
-            console.log(item);
             if (item.parentNode == parentul) {
               let wrapper = document.createElement('li');
               wrapper.className = 'fr-nav__item';
