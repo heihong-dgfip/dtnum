@@ -6,11 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface FrAbout {
-    }
     interface FrAccordion {
-    }
-    interface FrContact {
     }
     interface FrFooter {
     }
@@ -37,30 +33,16 @@ export namespace Components {
         "textLink": string;
         "titleLink": string;
     }
-    interface FrHome {
-    }
     interface FrNavigation {
         "addElement": (element: any) => Promise<void>;
     }
 }
 declare global {
-    interface HTMLFrAboutElement extends Components.FrAbout, HTMLStencilElement {
-    }
-    var HTMLFrAboutElement: {
-        prototype: HTMLFrAboutElement;
-        new (): HTMLFrAboutElement;
-    };
     interface HTMLFrAccordionElement extends Components.FrAccordion, HTMLStencilElement {
     }
     var HTMLFrAccordionElement: {
         prototype: HTMLFrAccordionElement;
         new (): HTMLFrAccordionElement;
-    };
-    interface HTMLFrContactElement extends Components.FrContact, HTMLStencilElement {
-    }
-    var HTMLFrContactElement: {
-        prototype: HTMLFrContactElement;
-        new (): HTMLFrContactElement;
     };
     interface HTMLFrFooterElement extends Components.FrFooter, HTMLStencilElement {
     }
@@ -98,12 +80,6 @@ declare global {
         prototype: HTMLFrHeaderToolsLinkElement;
         new (): HTMLFrHeaderToolsLinkElement;
     };
-    interface HTMLFrHomeElement extends Components.FrHome, HTMLStencilElement {
-    }
-    var HTMLFrHomeElement: {
-        prototype: HTMLFrHomeElement;
-        new (): HTMLFrHomeElement;
-    };
     interface HTMLFrNavigationElement extends Components.FrNavigation, HTMLStencilElement {
     }
     var HTMLFrNavigationElement: {
@@ -111,25 +87,18 @@ declare global {
         new (): HTMLFrNavigationElement;
     };
     interface HTMLElementTagNameMap {
-        "fr-about": HTMLFrAboutElement;
         "fr-accordion": HTMLFrAccordionElement;
-        "fr-contact": HTMLFrContactElement;
         "fr-footer": HTMLFrFooterElement;
         "fr-header": HTMLFrHeaderElement;
         "fr-header-menu-links": HTMLFrHeaderMenuLinksElement;
         "fr-header-service": HTMLFrHeaderServiceElement;
         "fr-header-tools": HTMLFrHeaderToolsElement;
         "fr-header-tools-link": HTMLFrHeaderToolsLinkElement;
-        "fr-home": HTMLFrHomeElement;
         "fr-navigation": HTMLFrNavigationElement;
     }
 }
 declare namespace LocalJSX {
-    interface FrAbout {
-    }
     interface FrAccordion {
-    }
-    interface FrContact {
     }
     interface FrFooter {
     }
@@ -156,21 +125,16 @@ declare namespace LocalJSX {
         "textLink"?: string;
         "titleLink"?: string;
     }
-    interface FrHome {
-    }
     interface FrNavigation {
     }
     interface IntrinsicElements {
-        "fr-about": FrAbout;
         "fr-accordion": FrAccordion;
-        "fr-contact": FrContact;
         "fr-footer": FrFooter;
         "fr-header": FrHeader;
         "fr-header-menu-links": FrHeaderMenuLinks;
         "fr-header-service": FrHeaderService;
         "fr-header-tools": FrHeaderTools;
         "fr-header-tools-link": FrHeaderToolsLink;
-        "fr-home": FrHome;
         "fr-navigation": FrNavigation;
     }
 }
@@ -178,16 +142,13 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "fr-about": LocalJSX.FrAbout & JSXBase.HTMLAttributes<HTMLFrAboutElement>;
             "fr-accordion": LocalJSX.FrAccordion & JSXBase.HTMLAttributes<HTMLFrAccordionElement>;
-            "fr-contact": LocalJSX.FrContact & JSXBase.HTMLAttributes<HTMLFrContactElement>;
             "fr-footer": LocalJSX.FrFooter & JSXBase.HTMLAttributes<HTMLFrFooterElement>;
             "fr-header": LocalJSX.FrHeader & JSXBase.HTMLAttributes<HTMLFrHeaderElement>;
             "fr-header-menu-links": LocalJSX.FrHeaderMenuLinks & JSXBase.HTMLAttributes<HTMLFrHeaderMenuLinksElement>;
             "fr-header-service": LocalJSX.FrHeaderService & JSXBase.HTMLAttributes<HTMLFrHeaderServiceElement>;
             "fr-header-tools": LocalJSX.FrHeaderTools & JSXBase.HTMLAttributes<HTMLFrHeaderToolsElement>;
             "fr-header-tools-link": LocalJSX.FrHeaderToolsLink & JSXBase.HTMLAttributes<HTMLFrHeaderToolsLinkElement>;
-            "fr-home": LocalJSX.FrHome & JSXBase.HTMLAttributes<HTMLFrHomeElement>;
             "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
         }
     }
