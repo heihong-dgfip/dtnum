@@ -1,6 +1,6 @@
 {
   "name": "@dtnum/vue",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "",
   "scripts": {
     "build": "npm run clean && npm run compile",
@@ -26,6 +26,6 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
-    "@dtnum/core": "workspace:^0.0.15"
+    "@dtnum/core": "workspace:^0.0.17"
   }
 }
