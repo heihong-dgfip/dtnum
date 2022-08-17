@@ -1,6 +1,6 @@
 {
   "name": "@dtnum/core",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -33,6 +33,7 @@
     "@stencil/eslint-plugin": "^0.4.0",
     "@stencil/sass": "^1.5.2",
     "@types/jest": "^27.0.3",
+    "@types/node": "^18.7.6",
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^4.0.0",
     "eslint": "^7.0.0",
