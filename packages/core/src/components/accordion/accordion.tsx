@@ -1,23 +1,58 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Element, Prop } from '@stencil/core';
+
+declare global {
+  interface Window {
+    dsfr: any;
+  }
+}
 
 @Component({
   tag: 'fr-accordion',
   styleUrl: 'accordion.scss',
-  shadow: false,
+  shadow: true,
 })
 export class Accordion {
+  @Element() el!: HTMLElement;
+
+  slotElements: Array<any> = [];
+  slotElementsOld: Array<any> = [];
+  attributes = this.el.getAttributeNames();
+  @Prop({ reflect: true }) toto = 'test';
+
+  subscriberCallback(mutations) {
+    mutations.forEach((mutation) => {
+      console.log(mutation);
+      if (mutation.type === 'childList') {
+        console.log(mutation.addedNodes);
+      } else if (mutation.type === 'attributes') {
+        console.log(`The ${mutation.attributeName} attribute was modified.`);
+      }
+    });
+  }
+
+  componentDidLoad() {
+    const target = this.el;
+
+    const config = {
+      attributes: true,
+      childList: true,
+      attributeOldValue: true,
+      attributeFilter: ['class'],
+    };
+
+    const observer = new MutationObserver(this.subscriberCallback.bind(this));
+    observer.observe(target, config);
+  }
+
+  slotChange() {
+    this.slotElements = [...this.el.shadowRoot.querySelector('slot')?.assignedElements({ flatten: true })];
+  }
+
   render() {
     return (
-      <section class="fr-accordion">
-        <h3 class="fr-accordion__title">
-          <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion1">
-            <slot name="title"></slot>
-          </button>
-        </h3>
-        <div id="accordion1" class="fr-collapse">
-          <slot />
-        </div>
-      </section>
+      <ol>
+        <slot onSlotchange={() => this.slotChange()}></slot>
+      </ol>
     );
   }
 }
