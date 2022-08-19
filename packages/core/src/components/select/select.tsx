@@ -1,4 +1,4 @@
-import { Component, h, Element, ComponentInterface, Method } from '@stencil/core';
+import { Component, h, ComponentInterface } from '@stencil/core';
 
 @Component({
   tag: 'fr-select',
