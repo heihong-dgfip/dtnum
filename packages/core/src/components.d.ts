@@ -37,6 +37,8 @@ export namespace Components {
     interface FrNavigation {
         "addElement": (element: any) => Promise<void>;
     }
+    interface FrSelect {
+    }
 }
 declare global {
     interface HTMLFrAccordionElement extends Components.FrAccordion, HTMLStencilElement {
@@ -87,6 +89,12 @@ declare global {
         prototype: HTMLFrNavigationElement;
         new (): HTMLFrNavigationElement;
     };
+    interface HTMLFrSelectElement extends Components.FrSelect, HTMLStencilElement {
+    }
+    var HTMLFrSelectElement: {
+        prototype: HTMLFrSelectElement;
+        new (): HTMLFrSelectElement;
+    };
     interface HTMLElementTagNameMap {
         "fr-accordion": HTMLFrAccordionElement;
         "fr-footer": HTMLFrFooterElement;
@@ -96,6 +104,7 @@ declare global {
         "fr-header-tools": HTMLFrHeaderToolsElement;
         "fr-header-tools-link": HTMLFrHeaderToolsLinkElement;
         "fr-navigation": HTMLFrNavigationElement;
+        "fr-select": HTMLFrSelectElement;
     }
 }
 declare namespace LocalJSX {
@@ -129,6 +138,8 @@ declare namespace LocalJSX {
     }
     interface FrNavigation {
     }
+    interface FrSelect {
+    }
     interface IntrinsicElements {
         "fr-accordion": FrAccordion;
         "fr-footer": FrFooter;
@@ -138,6 +149,7 @@ declare namespace LocalJSX {
         "fr-header-tools": FrHeaderTools;
         "fr-header-tools-link": FrHeaderToolsLink;
         "fr-navigation": FrNavigation;
+        "fr-select": FrSelect;
     }
 }
 export { LocalJSX as JSX };
@@ -152,6 +164,7 @@ declare module "@stencil/core" {
             "fr-header-tools": LocalJSX.FrHeaderTools & JSXBase.HTMLAttributes<HTMLFrHeaderToolsElement>;
             "fr-header-tools-link": LocalJSX.FrHeaderToolsLink & JSXBase.HTMLAttributes<HTMLFrHeaderToolsLinkElement>;
             "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
+            "fr-select": LocalJSX.FrSelect & JSXBase.HTMLAttributes<HTMLFrSelectElement>;
         }
     }
 }

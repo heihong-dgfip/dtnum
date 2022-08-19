@@ -13,9 +13,12 @@ import { defineCustomElement as defineFrHeaderService } from '@dtnum/core/compon
 import { defineCustomElement as defineFrHeaderTools } from '@dtnum/core/components/fr-header-tools.js';
 import { defineCustomElement as defineFrHeaderToolsLink } from '@dtnum/core/components/fr-header-tools-link.js';
 import { defineCustomElement as defineFrNavigation } from '@dtnum/core/components/fr-navigation.js';
+import { defineCustomElement as defineFrSelect } from '@dtnum/core/components/fr-select.js';
 
 
-export const FrAccordion = /*@__PURE__*/ defineContainer<JSX.FrAccordion>('fr-accordion', defineFrAccordion);
+export const FrAccordion = /*@__PURE__*/ defineContainer<JSX.FrAccordion>('fr-accordion', defineFrAccordion, [
+  'toto'
+]);
 
 
 export const FrFooter = /*@__PURE__*/ defineContainer<JSX.FrFooter>('fr-footer', defineFrFooter);
@@ -53,4 +56,7 @@ export const FrHeaderToolsLink = /*@__PURE__*/ defineContainer<JSX.FrHeaderTools
 
 
 export const FrNavigation = /*@__PURE__*/ defineContainer<JSX.FrNavigation>('fr-navigation', defineFrNavigation);
+
+
+export const FrSelect = /*@__PURE__*/ defineContainer<JSX.FrSelect>('fr-select', defineFrSelect);
 
