@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface FrAccordion {
+        "toto": string;
     }
     interface FrFooter {
     }
@@ -99,6 +100,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface FrAccordion {
+        "toto"?: string;
     }
     interface FrFooter {
     }

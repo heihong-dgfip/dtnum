@@ -12,16 +12,22 @@
     <main role="main" id="content" class="home">
       <fr-accordion id="accordion">
         <li>element 1</li>
+        <li id="remove">element 1</li>
       </fr-accordion>
-      <button onclick="myFunction()">Click me</button>
+      <button onclick="add()">add</button>
+      <button onclick="remove()">remove</button>
     </main>
   </body>
   <script>
     let i = 0;
-    function myFunction() {
+    function add() {
       let li = document.createElement('li');
       li.innerHTML = 'element ' + i;
       document.getElementById('accordion').append(li);
+    }
+
+    function remove() {
+      document.getElementById('remove').remove();
     }
   </script>
 </html>
