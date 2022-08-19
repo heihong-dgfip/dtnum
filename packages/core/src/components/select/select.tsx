@@ -2,6 +2,7 @@ import { Component, h, ComponentInterface } from '@stencil/core';
 
 @Component({
   tag: 'fr-select',
+  styleUrl: 'select.scss',
   shadow: false,
 })
 export class Select implements ComponentInterface {
