@@ -19,21 +19,11 @@ export class Accordion {
   attributes = this.el.getAttributeNames();
   @Prop({ reflect: true }) toto = 'test';
 
-  /* dispose (node) {
-    const disposables = [];
-    this.forEach((element) => {
-      if (node.contains(element.node)) disposables.push(element);
-    });
-
-    for (const disposable of disposables) {
-      disposable.dispose();
-      this.remove(disposable);
-    }
-  }*/
-
   subscriberCallback(mutations) {
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach((node) => console.log('add', node));
+        mutation.removedNodes.forEach((node) => console.log('remove', node));
       } else if (mutation.type === 'attributes') {
         console.log(`The ${mutation.attributeName} attribute was modified.`);
       }
@@ -44,10 +34,9 @@ export class Accordion {
     const target = this.el;
 
     const config = {
-      attributes: true,
       childList: true,
-      attributeOldValue: true,
-      attributeFilter: ['class'],
+      subtree: true,
+      attributes: true,
     };
 
     const observer = new MutationObserver(this.subscriberCallback.bind(this));

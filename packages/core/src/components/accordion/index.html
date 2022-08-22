@@ -16,6 +16,7 @@
       </fr-accordion>
       <button onclick="add()">add</button>
       <button onclick="remove()">remove</button>
+      <button onclick="addAttribut()">addAttribut</button>
     </main>
   </body>
   <script>
@@ -28,6 +29,10 @@
 
     function remove() {
       document.getElementById('remove').remove();
+    }
+
+    function addAttribut() {
+      document.getElementById('accordion').setAttribute('aria-label', 'titi');
     }
   </script>
 </html>
