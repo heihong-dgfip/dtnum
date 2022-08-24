@@ -9,36 +9,22 @@ export class Navigation implements ComponentInterface {
   @Element() el!: HTMLElement;
 
   componentDidLoad() {
-    let f = 'componentDidLoad';
-
-    this.slotchange(f);
+    this.init();
   }
 
-  slotchange(f) {
-    if (this.el.querySelector('ul.fr-nav__list')) {
-      if (this.el.querySelector('ul.fr-nav__list')?.children.length !== 0) {
-        if (
-          this.el.querySelectorAll('li.fr-nav__item') &&
-          this.el.querySelectorAll('li.fr-nav_item')?.length !==
-            this.el.querySelector('ul.fr-nav__list')?.children.length
-        ) {
-          console.log(f);
-          console.log(this.el.querySelector('ul.fr-nav__list')?.children);
-          Array.from(this.el.querySelector('ul.fr-nav__list')?.children).forEach((item) => {
-            item?.setAttribute('class', 'fr-nav__link');
-            let parent = item.parentNode;
+  init() {
+    Array.from(this.el.querySelector('ul.fr-nav__list')?.children).forEach((item) => {
+      item?.setAttribute('class', 'fr-nav__link');
+      let parent = item.parentNode;
 
-            let parentul = this.el.querySelector('ul.fr-nav__list');
-            if (item.parentNode == parentul) {
-              let wrapper = document.createElement('li');
-              wrapper.className = 'fr-nav__item';
-              parent.replaceChild(wrapper, item);
-              wrapper.appendChild(item);
-            }
-          });
-        }
+      let parentul = this.el.querySelector('ul.fr-nav__list');
+      if (item.parentNode == parentul) {
+        let wrapper = document.createElement('li');
+        wrapper.className = 'fr-nav__item';
+        parent.replaceChild(wrapper, item);
+        wrapper.appendChild(item);
       }
-    }
+    });
   }
 
   @Method()

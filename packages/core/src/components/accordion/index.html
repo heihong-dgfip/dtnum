@@ -10,16 +10,8 @@
   </head>
   <body>
     <main role="main" id="content" class="home">
-      <fr-accordion id="accordion">
-        <li>
-          <p class="fr-tag">Label tag 1</p>
-        </li>
-        <li>
-          <p class="fr-tag">Label tag 2</p>
-        </li>
-        <li>
-          <p class="fr-tag">Label tag 3</p>
-        </li>
+      <fr-accordion id="accordion" id="accordion">
+        <p id="test">description</p>
       </fr-accordion>
       <button onclick="add()">add</button>
       <button onclick="remove()">remove</button>
@@ -29,13 +21,16 @@
   <script>
     let i = 0;
     function add() {
-      let li = document.createElement('li');
-      li.innerHTML = 'element ' + i;
-      document.getElementById('accordion').append(li);
+      let p = document.createElement('p');
+      p.innerHTML = 'description2';
+      document.getElementById('accordion').append(p);
     }
 
     function remove() {
-      document.getElementById('remove').remove();
+      document.getElementById('test').remove();
+      let p = document.createElement('p');
+      p.innerHTML = 'description2';
+      document.getElementById('accordion').append(p);
     }
 
     function addAttribut() {

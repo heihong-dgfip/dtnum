@@ -9,7 +9,7 @@ declare global {
 @Component({
   tag: 'fr-accordion',
   styleUrl: 'accordion.scss',
-  shadow: true,
+  shadow: false,
 })
 export class Accordion {
   @Element() el!: HTMLElement;
@@ -51,22 +51,29 @@ export class Accordion {
 
     window.dsfr.observer = new MutationObserver(this.subscriberCallback.bind(this));
     window.dsfr.observer.observe(target, config);
+    (window.dsfr.verbose = true), (window.dsfr.mode = 'manual');
     console.log(window.dsfr);
-    window.dsfr.start();
-  }
 
-  slotChange() {
-    if (this.slotElements.length === 0) {
-      this.slotElements = [...this.el.shadowRoot.querySelector('slot')?.assignedElements({ flatten: true })];
-      console.log(this.slotElements);
+    function start() {
+      console.log('start');
+      window.dsfr.stop();
+      window.dsfr.start();
     }
+    setTimeout(() => start(), 1000);
   }
 
   render() {
     return (
-      <ul class="fr-tags-group">
-        <slot onSlotchange={() => this.slotChange()}></slot>
-      </ul>
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-77">
+            Intitulé accordéon
+          </button>
+        </h3>
+        <div class="fr-collapse" id="accordion-77">
+          <slot></slot>
+        </div>
+      </section>
     );
   }
 }
