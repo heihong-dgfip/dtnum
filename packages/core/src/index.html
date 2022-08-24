@@ -25,10 +25,6 @@
       </fr-navigation>
     </fr-header>
     <main role="main" id="content" class="home">
-      <fr-accordion
-        ><span slot="title" id="titre1">titre1</span>
-        <span id="descripton1"><span>descripton</span></span></fr-accordion
-      >
       <button onclick="myFunction()">Click me</button>
     </main>
 
@@ -39,8 +35,8 @@
       let link = document.createElement('a');
       link.href = '#';
       link.target = '_self';
-      link.innerHTML = 'acces direct';
-      document.querySelector('fr-navigation').addElement(link);
+      link.innerHTML = 'acces direct last';
+      document.querySelector('fr-navigation').append(link);
     }
   </script>
 </html>

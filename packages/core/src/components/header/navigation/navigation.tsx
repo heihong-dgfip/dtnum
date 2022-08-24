@@ -5,11 +5,35 @@ import { Component, h, Element, ComponentInterface, Method } from '@stencil/core
   styleUrl: 'navigation.scss',
   shadow: false,
 })
-export class Navigation implements ComponentInterface {
+export class thatNavigation implements ComponentInterface {
   @Element() el!: HTMLElement;
 
   componentDidLoad() {
     this.init();
+
+    const target = this.el;
+
+    const config = {
+      childList: true,
+      subtree: true,
+      attributes: true,
+    };
+
+    let that = this;
+
+    let link = document.createElement('a');
+    link.href = '#';
+    link.target = '_self';
+    link.innerHTML = 'acces direct test';
+
+    function subscriberCallback(mutations) {
+      mutations.forEach((mutation) => {
+        console.log(mutation);
+      });
+    }
+
+    const observer = new MutationObserver(subscriberCallback);
+    observer.observe(target, config);
   }
 
   init() {
