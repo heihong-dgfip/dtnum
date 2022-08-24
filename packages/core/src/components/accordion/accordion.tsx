@@ -41,7 +41,6 @@ export class Accordion {
   }
 
   componentDidLoad() {
-    console.log(window.dsfr);
     const target = this.el;
 
     const config = {
@@ -50,8 +49,10 @@ export class Accordion {
       attributes: true,
     };
 
-    const observer = new MutationObserver(this.subscriberCallback.bind(this));
-    observer.observe(target, config);
+    window.dsfr.observer = new MutationObserver(this.subscriberCallback.bind(this));
+    window.dsfr.observer.observe(target, config);
+    console.log(window.dsfr);
+    window.dsfr.start();
   }
 
   slotChange() {
@@ -63,9 +64,9 @@ export class Accordion {
 
   render() {
     return (
-      <ol>
+      <ul class="fr-tags-group">
         <slot onSlotchange={() => this.slotChange()}></slot>
-      </ol>
+      </ul>
     );
   }
 }
