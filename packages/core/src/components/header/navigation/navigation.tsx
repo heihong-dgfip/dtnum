@@ -1,4 +1,4 @@
-import { Component, h, Element, ComponentInterface, Method } from '@stencil/core';
+import { Component, h, Element, ComponentInterface, Method, State } from '@stencil/core';
 
 @Component({
   tag: 'fr-navigation',
@@ -7,6 +7,7 @@ import { Component, h, Element, ComponentInterface, Method } from '@stencil/core
 })
 export class thatNavigation implements ComponentInterface {
   @Element() el!: HTMLElement;
+  @State() newElement: any;
 
   componentDidLoad() {
     this.init();
@@ -15,21 +16,16 @@ export class thatNavigation implements ComponentInterface {
 
     const config = {
       childList: true,
-      subtree: true,
-      attributes: true,
     };
 
-    let that = this;
-
-    let link = document.createElement('a');
-    link.href = '#';
-    link.target = '_self';
-    link.innerHTML = 'acces direct test';
-
     function subscriberCallback(mutations) {
-      mutations.forEach((mutation) => {
-        console.log(mutation);
-      });
+      for (let mutation of mutations) {
+        if (mutation.type === 'childList') {
+          mutation.addedNodes.forEach((node) => {
+            node.remove();
+          });
+        }
+      }
     }
 
     const observer = new MutationObserver(subscriberCallback);
@@ -61,6 +57,11 @@ export class thatNavigation implements ComponentInterface {
     this.el.querySelector('ul.fr-nav__list').appendChild(wrapper);
   }
 
+  @Method()
+  async modi() {
+    this.newElement = <p>test</p>;
+  }
+
   render() {
     return (
       <nav
@@ -72,6 +73,7 @@ export class thatNavigation implements ComponentInterface {
       >
         <ul class="fr-nav__list">
           <slot></slot>
+          {this.newElement}
         </ul>
       </nav>
     );

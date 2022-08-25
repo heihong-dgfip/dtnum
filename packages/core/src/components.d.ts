@@ -36,6 +36,7 @@ export namespace Components {
     }
     interface FrNavigation {
         "addElement": (element: any) => Promise<void>;
+        "modi": () => Promise<void>;
     }
     interface FrSelect {
     }

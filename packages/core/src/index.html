@@ -32,11 +32,10 @@
   </body>
   <script>
     function myFunction() {
-      let link = document.createElement('a');
+      var link = document.createElement('a');
+      link.innerHTML = 'Hello';
       link.href = '#';
-      link.target = '_self';
-      link.innerHTML = 'acces direct last';
-      document.querySelector('fr-navigation').append(link);
+      document.getElementById('navigation').appendChild(link);
     }
   </script>
 </html>
