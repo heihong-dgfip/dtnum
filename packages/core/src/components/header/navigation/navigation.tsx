@@ -8,9 +8,16 @@ import { Component, h, Element, ComponentInterface, Method, State } from '@stenc
 export class thatNavigation implements ComponentInterface {
   @Element() el!: HTMLElement;
   @State() newElement: any;
+  @State() newElements = [];
+
+  componentWillLoad() {
+    this.createElement();
+  }
 
   componentDidLoad() {
     this.init();
+
+    let that = this;
 
     const target = this.el;
 
@@ -22,10 +29,14 @@ export class thatNavigation implements ComponentInterface {
       for (let mutation of mutations) {
         if (mutation.type === 'childList') {
           mutation.addedNodes.forEach((node) => {
+            that.newElements.push(node);
             node.remove();
           });
         }
       }
+
+      console.log(that.newElements);
+      // that.newElement = that.createElement(that.newElements[0])
     }
 
     const observer = new MutationObserver(subscriberCallback);
@@ -45,6 +56,23 @@ export class thatNavigation implements ComponentInterface {
         wrapper.appendChild(item);
       }
     });
+  }
+
+  createElement() {
+    this.newElement = <a></a>;
+    let text = document.createTextNode('This just got added');
+    this.newElement.appendChild(text);
+
+    /*   for (var i = 0; i < node.attributes.length; i++) {
+        let attrib = node.attributes[i];
+        element.setAttribute(attrib.name, attrib.value);
+    }
+   // console.log(element)
+      if(node.tagName == 'A'){
+        element.innerHTML = node.innerHTML;
+      }
+      console.log('element',element)
+      console.log(node)*/
   }
 
   @Method()
