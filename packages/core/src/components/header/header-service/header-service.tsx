@@ -1,26 +1,19 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'fr-header-service',
-  styleUrl: 'header-service.scss',
+  tag: 'fr-header_service',
+  styleUrl: 'header_service.scss',
   shadow: false,
 })
-export class Link {
-  @Prop({ reflect: true }) titleLink = '';
-  @Prop({ reflect: true }) ariaCurrentLink = '';
-  @Prop({ reflect: true }) hrefLink = '';
-  @Prop({ reflect: true }) textLink = '';
+export class HeaderService {
+  @Prop({ reflect: true }) serviceDescription: string;
 
   render() {
-    return (
-      <a
-        href={this.hrefLink}
-        aria-current={this.ariaCurrentLink}
-        title={this.titleLink}
-        class="router-link-exact-active router-link-active"
-      >
-        <p class="fr-header__service-title">{this.textLink}</p>
-      </a>
-    );
+    <div class="fr-header__service">
+      <slot></slot>
+      <p v-if="serviceDescription" class="fr-header__service-tagline">
+        {this.serviceDescription}
+      </p>
+    </div>;
   }
 }
