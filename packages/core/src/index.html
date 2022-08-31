@@ -10,32 +10,7 @@
   </head>
   <body>
     <fr-header>
-      <fr-header-service
-        slot="service"
-        href-link="/"
-        aria-current-link="page"
-        title-link="Accueil - Système de Design de l'État"
-        text-link="Système de Design de l'État"
-      >
-      </fr-header-service>
-      <fr-navigation id="navigation">
-        <a href="#" target="_self" aria-current="page">accès direct</a>
-        <a href="#" target="_self">accès direct</a>
-        <a href="#" target="_self">accès direct</a>
-      </fr-navigation>
+      <fr-service></fr-service>
     </fr-header>
-    <main role="main" id="content" class="home">
-      <button onclick="myFunction()">Click me</button>
-    </main>
-
-    <fr-footer></fr-footer>
   </body>
-  <script>
-    function myFunction() {
-      var link = document.createElement('a');
-      link.innerHTML = 'Hello';
-      link.href = '#';
-      document.getElementById('navigation').appendChild(link);
-    }
-  </script>
 </html>

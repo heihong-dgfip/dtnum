@@ -6,166 +6,96 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface FrAccordion {
-        "toto": string;
-    }
-    interface FrFooter {
-    }
     interface FrHeader {
     }
-    interface FrHeaderMenuLinks {
-        "ariaCurrentLink": string;
-        "hrefLink": string;
-        "textLink": string;
-        "titleLink": string;
+    interface FrLogo {
+        "large"?: boolean;
+        /**
+          * Global size of the logo with the Marianne and the french motto The default size is medium and does not need to be specified
+         */
+        "small"?: boolean;
     }
-    interface FrHeaderService {
-        "ariaCurrentLink": string;
-        "hrefLink": string;
-        "textLink": string;
-        "titleLink": string;
+    interface FrSearch {
     }
-    interface FrHeaderTools {
-    }
-    interface FrHeaderToolsLink {
-        "hrefLink": string;
-        "iconLink": string;
-        "targetLink": string;
-        "textLink": string;
-        "titleLink": string;
-    }
-    interface FrNavigation {
-        "addElement": (element: any) => Promise<void>;
-        "modi": () => Promise<void>;
-    }
-    interface FrSelect {
+    interface FrService {
+        "large"?: boolean;
+        /**
+          * Global size of the logo with the Marianne and the french motto The default size is medium and does not need to be specified
+         */
+        "small"?: boolean;
     }
 }
+export interface FrSearchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFrSearchElement;
+}
 declare global {
-    interface HTMLFrAccordionElement extends Components.FrAccordion, HTMLStencilElement {
-    }
-    var HTMLFrAccordionElement: {
-        prototype: HTMLFrAccordionElement;
-        new (): HTMLFrAccordionElement;
-    };
-    interface HTMLFrFooterElement extends Components.FrFooter, HTMLStencilElement {
-    }
-    var HTMLFrFooterElement: {
-        prototype: HTMLFrFooterElement;
-        new (): HTMLFrFooterElement;
-    };
     interface HTMLFrHeaderElement extends Components.FrHeader, HTMLStencilElement {
     }
     var HTMLFrHeaderElement: {
         prototype: HTMLFrHeaderElement;
         new (): HTMLFrHeaderElement;
     };
-    interface HTMLFrHeaderMenuLinksElement extends Components.FrHeaderMenuLinks, HTMLStencilElement {
+    interface HTMLFrLogoElement extends Components.FrLogo, HTMLStencilElement {
     }
-    var HTMLFrHeaderMenuLinksElement: {
-        prototype: HTMLFrHeaderMenuLinksElement;
-        new (): HTMLFrHeaderMenuLinksElement;
+    var HTMLFrLogoElement: {
+        prototype: HTMLFrLogoElement;
+        new (): HTMLFrLogoElement;
     };
-    interface HTMLFrHeaderServiceElement extends Components.FrHeaderService, HTMLStencilElement {
+    interface HTMLFrSearchElement extends Components.FrSearch, HTMLStencilElement {
     }
-    var HTMLFrHeaderServiceElement: {
-        prototype: HTMLFrHeaderServiceElement;
-        new (): HTMLFrHeaderServiceElement;
+    var HTMLFrSearchElement: {
+        prototype: HTMLFrSearchElement;
+        new (): HTMLFrSearchElement;
     };
-    interface HTMLFrHeaderToolsElement extends Components.FrHeaderTools, HTMLStencilElement {
+    interface HTMLFrServiceElement extends Components.FrService, HTMLStencilElement {
     }
-    var HTMLFrHeaderToolsElement: {
-        prototype: HTMLFrHeaderToolsElement;
-        new (): HTMLFrHeaderToolsElement;
-    };
-    interface HTMLFrHeaderToolsLinkElement extends Components.FrHeaderToolsLink, HTMLStencilElement {
-    }
-    var HTMLFrHeaderToolsLinkElement: {
-        prototype: HTMLFrHeaderToolsLinkElement;
-        new (): HTMLFrHeaderToolsLinkElement;
-    };
-    interface HTMLFrNavigationElement extends Components.FrNavigation, HTMLStencilElement {
-    }
-    var HTMLFrNavigationElement: {
-        prototype: HTMLFrNavigationElement;
-        new (): HTMLFrNavigationElement;
-    };
-    interface HTMLFrSelectElement extends Components.FrSelect, HTMLStencilElement {
-    }
-    var HTMLFrSelectElement: {
-        prototype: HTMLFrSelectElement;
-        new (): HTMLFrSelectElement;
+    var HTMLFrServiceElement: {
+        prototype: HTMLFrServiceElement;
+        new (): HTMLFrServiceElement;
     };
     interface HTMLElementTagNameMap {
-        "fr-accordion": HTMLFrAccordionElement;
-        "fr-footer": HTMLFrFooterElement;
         "fr-header": HTMLFrHeaderElement;
-        "fr-header-menu-links": HTMLFrHeaderMenuLinksElement;
-        "fr-header-service": HTMLFrHeaderServiceElement;
-        "fr-header-tools": HTMLFrHeaderToolsElement;
-        "fr-header-tools-link": HTMLFrHeaderToolsLinkElement;
-        "fr-navigation": HTMLFrNavigationElement;
-        "fr-select": HTMLFrSelectElement;
+        "fr-logo": HTMLFrLogoElement;
+        "fr-search": HTMLFrSearchElement;
+        "fr-service": HTMLFrServiceElement;
     }
 }
 declare namespace LocalJSX {
-    interface FrAccordion {
-        "toto"?: string;
-    }
-    interface FrFooter {
-    }
     interface FrHeader {
     }
-    interface FrHeaderMenuLinks {
-        "ariaCurrentLink"?: string;
-        "hrefLink"?: string;
-        "textLink"?: string;
-        "titleLink"?: string;
+    interface FrLogo {
+        "large"?: boolean;
+        /**
+          * Global size of the logo with the Marianne and the french motto The default size is medium and does not need to be specified
+         */
+        "small"?: boolean;
     }
-    interface FrHeaderService {
-        "ariaCurrentLink"?: string;
-        "hrefLink"?: string;
-        "textLink"?: string;
-        "titleLink"?: string;
+    interface FrSearch {
+        "onFr-search-execute"?: (event: FrSearchCustomEvent<any>) => void;
     }
-    interface FrHeaderTools {
-    }
-    interface FrHeaderToolsLink {
-        "hrefLink"?: string;
-        "iconLink"?: string;
-        "targetLink"?: string;
-        "textLink"?: string;
-        "titleLink"?: string;
-    }
-    interface FrNavigation {
-    }
-    interface FrSelect {
+    interface FrService {
+        "large"?: boolean;
+        /**
+          * Global size of the logo with the Marianne and the french motto The default size is medium and does not need to be specified
+         */
+        "small"?: boolean;
     }
     interface IntrinsicElements {
-        "fr-accordion": FrAccordion;
-        "fr-footer": FrFooter;
         "fr-header": FrHeader;
-        "fr-header-menu-links": FrHeaderMenuLinks;
-        "fr-header-service": FrHeaderService;
-        "fr-header-tools": FrHeaderTools;
-        "fr-header-tools-link": FrHeaderToolsLink;
-        "fr-navigation": FrNavigation;
-        "fr-select": FrSelect;
+        "fr-logo": FrLogo;
+        "fr-search": FrSearch;
+        "fr-service": FrService;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "fr-accordion": LocalJSX.FrAccordion & JSXBase.HTMLAttributes<HTMLFrAccordionElement>;
-            "fr-footer": LocalJSX.FrFooter & JSXBase.HTMLAttributes<HTMLFrFooterElement>;
             "fr-header": LocalJSX.FrHeader & JSXBase.HTMLAttributes<HTMLFrHeaderElement>;
-            "fr-header-menu-links": LocalJSX.FrHeaderMenuLinks & JSXBase.HTMLAttributes<HTMLFrHeaderMenuLinksElement>;
-            "fr-header-service": LocalJSX.FrHeaderService & JSXBase.HTMLAttributes<HTMLFrHeaderServiceElement>;
-            "fr-header-tools": LocalJSX.FrHeaderTools & JSXBase.HTMLAttributes<HTMLFrHeaderToolsElement>;
-            "fr-header-tools-link": LocalJSX.FrHeaderToolsLink & JSXBase.HTMLAttributes<HTMLFrHeaderToolsLinkElement>;
-            "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
-            "fr-select": LocalJSX.FrSelect & JSXBase.HTMLAttributes<HTMLFrSelectElement>;
+            "fr-logo": LocalJSX.FrLogo & JSXBase.HTMLAttributes<HTMLFrLogoElement>;
+            "fr-search": LocalJSX.FrSearch & JSXBase.HTMLAttributes<HTMLFrSearchElement>;
+            "fr-service": LocalJSX.FrService & JSXBase.HTMLAttributes<HTMLFrServiceElement>;
         }
     }
 }
