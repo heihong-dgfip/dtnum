@@ -15,19 +15,9 @@ export namespace Components {
          */
         "small"?: boolean;
     }
-    interface FrSearch {
-    }
     interface FrService {
-        "large"?: boolean;
-        /**
-          * Global size of the logo with the Marianne and the french motto The default size is medium and does not need to be specified
-         */
-        "small"?: boolean;
+        "description": string;
     }
-}
-export interface FrSearchCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLFrSearchElement;
 }
 declare global {
     interface HTMLFrHeaderElement extends Components.FrHeader, HTMLStencilElement {
@@ -42,12 +32,6 @@ declare global {
         prototype: HTMLFrLogoElement;
         new (): HTMLFrLogoElement;
     };
-    interface HTMLFrSearchElement extends Components.FrSearch, HTMLStencilElement {
-    }
-    var HTMLFrSearchElement: {
-        prototype: HTMLFrSearchElement;
-        new (): HTMLFrSearchElement;
-    };
     interface HTMLFrServiceElement extends Components.FrService, HTMLStencilElement {
     }
     var HTMLFrServiceElement: {
@@ -57,7 +41,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "fr-header": HTMLFrHeaderElement;
         "fr-logo": HTMLFrLogoElement;
-        "fr-search": HTMLFrSearchElement;
         "fr-service": HTMLFrServiceElement;
     }
 }
@@ -71,20 +54,12 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
     }
-    interface FrSearch {
-        "onFr-search-execute"?: (event: FrSearchCustomEvent<any>) => void;
-    }
     interface FrService {
-        "large"?: boolean;
-        /**
-          * Global size of the logo with the Marianne and the french motto The default size is medium and does not need to be specified
-         */
-        "small"?: boolean;
+        "description": string;
     }
     interface IntrinsicElements {
         "fr-header": FrHeader;
         "fr-logo": FrLogo;
-        "fr-search": FrSearch;
         "fr-service": FrService;
     }
 }
@@ -94,7 +69,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "fr-header": LocalJSX.FrHeader & JSXBase.HTMLAttributes<HTMLFrHeaderElement>;
             "fr-logo": LocalJSX.FrLogo & JSXBase.HTMLAttributes<HTMLFrLogoElement>;
-            "fr-search": LocalJSX.FrSearch & JSXBase.HTMLAttributes<HTMLFrSearchElement>;
             "fr-service": LocalJSX.FrService & JSXBase.HTMLAttributes<HTMLFrServiceElement>;
         }
     }
