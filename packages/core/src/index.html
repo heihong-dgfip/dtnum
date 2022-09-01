@@ -18,7 +18,19 @@
           <p class="fr-header__service-title">Nom du site / service</p>
         </a>
       </fr-service>
-      <fr-navigation slot="nav"></fr-navigation>
+      <fr-navigation slot="nav" id="navigation"></fr-navigation>
     </fr-header>
+    <main role="main" id="content" class="home">
+      <button onclick="myFunction()">Click me</button>
+      <fr-tags></fr-tags>
+    </main>
   </body>
+  <script>
+    function myFunction() {
+      var link = document.createElement('a');
+      link.innerHTML = 'Hello';
+      link.href = '#';
+      document.getElementById('navigation').addElement(link);
+    }
+  </script>
 </html>

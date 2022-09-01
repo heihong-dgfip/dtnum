@@ -16,9 +16,13 @@ export namespace Components {
         "small"?: boolean;
     }
     interface FrNavigation {
+        "addElement": (element: any) => Promise<void>;
+        "links": { href: string; target: string; text: string; }[];
     }
     interface FrService {
         "description": string;
+    }
+    interface FrTags {
     }
 }
 declare global {
@@ -46,11 +50,18 @@ declare global {
         prototype: HTMLFrServiceElement;
         new (): HTMLFrServiceElement;
     };
+    interface HTMLFrTagsElement extends Components.FrTags, HTMLStencilElement {
+    }
+    var HTMLFrTagsElement: {
+        prototype: HTMLFrTagsElement;
+        new (): HTMLFrTagsElement;
+    };
     interface HTMLElementTagNameMap {
         "fr-header": HTMLFrHeaderElement;
         "fr-logo": HTMLFrLogoElement;
         "fr-navigation": HTMLFrNavigationElement;
         "fr-service": HTMLFrServiceElement;
+        "fr-tags": HTMLFrTagsElement;
     }
 }
 declare namespace LocalJSX {
@@ -64,15 +75,19 @@ declare namespace LocalJSX {
         "small"?: boolean;
     }
     interface FrNavigation {
+        "links"?: { href: string; target: string; text: string; }[];
     }
     interface FrService {
         "description": string;
+    }
+    interface FrTags {
     }
     interface IntrinsicElements {
         "fr-header": FrHeader;
         "fr-logo": FrLogo;
         "fr-navigation": FrNavigation;
         "fr-service": FrService;
+        "fr-tags": FrTags;
     }
 }
 export { LocalJSX as JSX };
@@ -83,6 +98,7 @@ declare module "@stencil/core" {
             "fr-logo": LocalJSX.FrLogo & JSXBase.HTMLAttributes<HTMLFrLogoElement>;
             "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
             "fr-service": LocalJSX.FrService & JSXBase.HTMLAttributes<HTMLFrServiceElement>;
+            "fr-tags": LocalJSX.FrTags & JSXBase.HTMLAttributes<HTMLFrTagsElement>;
         }
     }
 }
