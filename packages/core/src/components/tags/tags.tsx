@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
 @Component({
   tag: 'fr-tags',
-  styleUrl: 'tags.scss',
+  styleUrl: 'tags.css',
   shadow: true,
 })
 export class Tags {
