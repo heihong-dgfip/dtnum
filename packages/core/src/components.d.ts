@@ -22,7 +22,13 @@ export namespace Components {
     interface FrService {
         "description": string;
     }
+    interface FrTag {
+    }
     interface FrTags {
+        /**
+          * Taille du composant. Par defaut, la valeur est MD.
+         */
+        "size"?: 'sm' | 'md';
     }
 }
 declare global {
@@ -50,6 +56,12 @@ declare global {
         prototype: HTMLFrServiceElement;
         new (): HTMLFrServiceElement;
     };
+    interface HTMLFrTagElement extends Components.FrTag, HTMLStencilElement {
+    }
+    var HTMLFrTagElement: {
+        prototype: HTMLFrTagElement;
+        new (): HTMLFrTagElement;
+    };
     interface HTMLFrTagsElement extends Components.FrTags, HTMLStencilElement {
     }
     var HTMLFrTagsElement: {
@@ -61,6 +73,7 @@ declare global {
         "fr-logo": HTMLFrLogoElement;
         "fr-navigation": HTMLFrNavigationElement;
         "fr-service": HTMLFrServiceElement;
+        "fr-tag": HTMLFrTagElement;
         "fr-tags": HTMLFrTagsElement;
     }
 }
@@ -80,13 +93,20 @@ declare namespace LocalJSX {
     interface FrService {
         "description": string;
     }
+    interface FrTag {
+    }
     interface FrTags {
+        /**
+          * Taille du composant. Par defaut, la valeur est MD.
+         */
+        "size"?: 'sm' | 'md';
     }
     interface IntrinsicElements {
         "fr-header": FrHeader;
         "fr-logo": FrLogo;
         "fr-navigation": FrNavigation;
         "fr-service": FrService;
+        "fr-tag": FrTag;
         "fr-tags": FrTags;
     }
 }
@@ -98,6 +118,7 @@ declare module "@stencil/core" {
             "fr-logo": LocalJSX.FrLogo & JSXBase.HTMLAttributes<HTMLFrLogoElement>;
             "fr-navigation": LocalJSX.FrNavigation & JSXBase.HTMLAttributes<HTMLFrNavigationElement>;
             "fr-service": LocalJSX.FrService & JSXBase.HTMLAttributes<HTMLFrServiceElement>;
+            "fr-tag": LocalJSX.FrTag & JSXBase.HTMLAttributes<HTMLFrTagElement>;
             "fr-tags": LocalJSX.FrTags & JSXBase.HTMLAttributes<HTMLFrTagsElement>;
         }
     }

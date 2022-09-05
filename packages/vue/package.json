@@ -26,6 +26,6 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
-    "@dtnum/core": "workspace:^0.0.19"
+    "@dtnum/core": "workspace:^0.0.24"
   }
 }
