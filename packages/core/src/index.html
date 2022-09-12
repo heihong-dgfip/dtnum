@@ -22,6 +22,7 @@
     </fr-header>
     <main role="main" id="content" class="home">
       <button onclick="myFunction()">Click me</button>
+      <button onclick="addtag()">Click me</button>
       <fr-tags>
         <fr-tag>
           <a class="fr-tag" href="#">Label tag 1</a>
@@ -41,6 +42,17 @@
       link.innerHTML = 'Hello';
       link.href = '#';
       document.getElementById('navigation').addElement(link);
+    }
+
+    function addtag() {
+      let tag = document.createElement('fr-tag');
+      var link = document.createElement('a');
+      link.innerHTML = 'Hello';
+      link.setAttribute('href', '#');
+      link.setAttribute('class', 'fr-tag');
+      tag.appendChild(link);
+
+      document.querySelector('fr-tags').appendChild(tag);
     }
   </script>
 </html>

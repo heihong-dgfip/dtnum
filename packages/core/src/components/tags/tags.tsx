@@ -32,7 +32,7 @@ export class Tags {
     return (
       <Host>
         <ul class="fr-tags-group" role="list">
-          <slot></slot>
+          <slot onSlotchange={() => this.slotTagGroupChange()}></slot>
         </ul>
       </Host>
     );
