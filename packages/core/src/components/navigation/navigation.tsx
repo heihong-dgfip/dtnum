@@ -25,16 +25,6 @@ export class Navigation {
     },
   ];
 
-  @Method()
-  async addElement(element) {
-    let wrapper = document.createElement('li');
-    wrapper.className = 'fr-nav__item';
-    wrapper.appendChild(element);
-    element.setAttribute('class', 'fr-nav__link');
-
-    this.el.querySelector('ul.fr-nav__list').appendChild(wrapper);
-  }
-
   render() {
     return (
       <nav class="fr-nav" role="navigation" aria-label="Menu principal">
