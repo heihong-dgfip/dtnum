@@ -4,6 +4,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'core',
+  globalStyle: 'src/global/global.scss',
   outputTargets: [
     vue({
       componentCorePackage: '@dtnum/core',

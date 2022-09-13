@@ -10,32 +10,49 @@
   </head>
   <body>
     <fr-header>
-      <fr-header-service
-        slot="service"
-        href-link="/"
-        aria-current-link="page"
-        title-link="Accueil - Système de Design de l'État"
-        text-link="Système de Design de l'État"
-      >
-      </fr-header-service>
-      <fr-navigation id="navigation">
-        <a href="#" target="_self" aria-current="page">accès direct</a>
-        <a href="#" target="_self">accès direct</a>
-        <a href="#" target="_self">accès direct</a>
-      </fr-navigation>
+      <fr-service description="baseline - précisions sur l‘organisation">
+        <a
+          href="/"
+          title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - nom de l’entité (ministère, secrétariat d‘état, gouvernement)]"
+        >
+          <p class="fr-header__service-title">Nom du site / service</p>
+        </a>
+      </fr-service>
+      <fr-navigation slot="nav" id="navigation"></fr-navigation>
     </fr-header>
     <main role="main" id="content" class="home">
       <button onclick="myFunction()">Click me</button>
+      <button onclick="addtag()">Click me</button>
+      <fr-tags>
+        <fr-tag>
+          <a class="fr-tag" href="#">Label tag 1</a>
+        </fr-tag>
+        <fr-tag>
+          <a class="fr-tag" href="#">Label tag 2</a>
+        </fr-tag>
+        <fr-tag>
+          <a class="fr-tag" href="#">Label tag 3</a>
+        </fr-tag>
+      </fr-tags>
     </main>
-
-    <fr-footer></fr-footer>
   </body>
   <script>
     function myFunction() {
       var link = document.createElement('a');
       link.innerHTML = 'Hello';
       link.href = '#';
-      document.getElementById('navigation').appendChild(link);
+      document.getElementById('navigation').addElement(link);
+    }
+
+    function addtag() {
+      let tag = document.createElement('fr-tag');
+      var link = document.createElement('a');
+      link.innerHTML = 'Hello';
+      link.setAttribute('href', '#');
+      link.setAttribute('class', 'fr-tag');
+      tag.appendChild(link);
+
+      document.querySelector('fr-tags').appendChild(tag);
     }
   </script>
 </html>
