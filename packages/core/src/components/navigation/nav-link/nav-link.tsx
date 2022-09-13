@@ -1,17 +1,18 @@
 import { Component, h, Element } from '@stencil/core';
 
 @Component({
-  tag: 'fr-navigation',
-  styleUrl: 'navigation.scss',
+  tag: 'fr-nav-link',
+  styleUrl: 'nav-link.scss',
   shadow: false,
 })
-export class Navigation {
+export class NavLink {
   @Element() el!: HTMLElement;
+
   render() {
     return (
-      <nav class="fr-nav" role="navigation" aria-label="Menu principal">
+      <li class="fr-nav__item">
         <slot></slot>
-      </nav>
+      </li>
     );
   }
 }

@@ -10,15 +10,27 @@
   </head>
   <body>
     <fr-header>
-      <fr-service description="baseline - précisions sur l‘organisation">
+      <fr-service baseline="baseline - précisions sur l‘organisation">
         <a
-          href="/"
+          href="https://www.systeme-de-design.gouv.fr/"
           title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - nom de l’entité (ministère, secrétariat d‘état, gouvernement)]"
         >
           <p class="fr-header__service-title">Nom du site / service</p>
         </a>
       </fr-service>
-      <fr-navigation slot="nav" id="navigation"></fr-navigation>
+      <fr-navigation slot="nav" id="navigation">
+        <fr-nav-list>
+          <fr-nav-link>
+            <a class="fr-nav__link" href="#" target="_self">accès direct</a>
+          </fr-nav-link>
+          <fr-nav-link>
+            <a class="fr-nav__link" href="#" target="_self">accès direct</a>
+          </fr-nav-link>
+          <fr-nav-link>
+            <a class="fr-nav__link" href="#" target="_self">accès direct</a>
+          </fr-nav-link>
+        </fr-nav-list>
+      </fr-navigation>
     </fr-header>
     <main role="main" id="content" class="home">
       <button onclick="myFunction()">Click me</button>
@@ -35,6 +47,7 @@
         </fr-tag>
       </fr-tags>
     </main>
+    <fr-footer></fr-footer>
   </body>
   <script>
     function myFunction() {
